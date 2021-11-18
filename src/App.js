@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
-import TalktoChild from './hanbi/Views/TalktoChild';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './hanbi/Main/Navbar';
+import Home from './hanbi/Main/Home';
+import Graph from './hanbi/Containers/Graph';
 import RecordSoundDetailContainer from './RecordSound/Containers/RecordSoundDetailContainer';
 import RecordSoundListContainer from './RecordSound/Containers/RecordSoundListContainer';
+import WatchandTalk from './hanbi/Containers/WatchandTalk';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <TalktoChild />
-        <RecordSoundListContainer />
-        <RecordSoundDetailContainer />
-      </div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />}/> 
+          <Route exact path="/watchandtalk/" element={<WatchandTalk />}/>
+          <Route exact path="/record/detail/:id" element={<RecordSoundDetailContainer />}/>
+          <Route exact path="/record/list/" element={<RecordSoundListContainer />}/>
+          <Route exact path="/graph/" element={<Graph />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }
