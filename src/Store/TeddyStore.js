@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import RecordSoundApi from "../Api/RecordSoundApi";
+import TeddyApi from '../Api/TeddyApi'
 
-class RecordSound{
+class TeddyStore {
     recordSound = {
         id : "",
         title : "", //HH:MM:SS초 아이의 대답이 녹음되었습니다.
@@ -9,15 +9,32 @@ class RecordSound{
         soundUrl: "", //녹음본 
         imgUrl: "", //분석그래프 이미지
     }
+
     recordSoundList = [];
 
-    constructor() {
-        makeAutoObservable(this, {}, {autoBind: true});
+    constructor(){
+        makeAutoObservable(this, {}, {autoBind:true})
+    }
+
+    goHome(e) {
+        window.location.href = '/';
+    }
+
+    goRecordSound(e) {
+        window.location.href = '/record/';
+    }
+
+    goWatchandTalk(e) {
+        window.location.href = '/watchandtalk/';
+    }
+
+    goGraph(e) {
+        window.location.href = '/graph/';
     }
 
     async selectAll(){
         try{
-            const result = await RecordSoundApi.recordSoundList();
+            const result = await TeddyApi.recordSoundList();
             console.log(result,"result===========");
             runInAction(()=>this.recordSoundList=result);
             console.log(this.recordSoundList,"List========")
@@ -30,14 +47,13 @@ class RecordSound{
 
     async selectRecordSound(id){
         try{
-            const result = await RecordSoundApi.recordSoundDetail(id);
+            const result = await TeddyApi.recordSoundDetail(id);
             runInAction(()=> {this.recordSound = result})
         }catch(error){
             this.message = error.message;
         }
     }
 
+}
 
-
-    }
-export default new RecordSound();
+export default new TeddyStore();
