@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class RecordSoundApi{
+class TeddyApi{
     URL = '/api/recordSound/'
 
     recordSoundList(){
@@ -16,4 +16,4 @@ class RecordSoundApi{
     
 }
 
-export default new RecordSoundApi();
+export default new TeddyApi();
