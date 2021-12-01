@@ -7,7 +7,9 @@ class TeddyStore {
         title : "", //HH:MM:SS초 아이의 대답이 녹음되었습니다.
         recordDate: "",
         soundUrl: "", //녹음본 
-        imgUrl: "", //분석그래프 이미지
+        imgUrl1: "",
+        imgUrl2: "",
+        imgUrl3: "",
     }
 
     recordSoundList = [];
