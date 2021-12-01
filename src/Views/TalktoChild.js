@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import TeddyStore from '../Store/TeddyStore';
+import SendIcon from '@mui/icons-material/Send';
+// import SendMessageButton from './SendMessageButton';
+
 
 
 class TalktoChild extends Component {
     render() {
         const {goHome} = TeddyStore;
+        const sendMessage = props => () => props.mqtt.publish('iot', 'HelloWorld')
+        const SendMessageButton = props => <Button variant="contained" endIcon={<SendIcon />} onClick={sendMessage(props)}>전송 </Button>
+
         return (
             <div>
                 <br/><br/>
@@ -33,9 +38,7 @@ class TalktoChild extends Component {
                 alignItems="center"
                 spacing={2}
                 >
-                    <Button variant="contained" endIcon={<SendIcon />}>
-                        전송
-                    </Button>
+                    <SendMessageButton />
                     <Button onClick={()=>goHome()} variant="outlined" endIcon={<DeleteIcon />}>
                         취소
                     </Button>
@@ -46,5 +49,4 @@ class TalktoChild extends Component {
         );
     }
 }
-
 export default TalktoChild;
