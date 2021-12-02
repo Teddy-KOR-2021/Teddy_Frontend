@@ -31,7 +31,7 @@ class TeddyStore {
     }
 
     goGraph(e) {
-        window.location.href = '/graph/';
+        window.location.href = 'http://18.133.133.235:8000/testdg4/';
     }
 
     async selectAll(){

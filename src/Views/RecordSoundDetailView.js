@@ -8,12 +8,12 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 class RecordSoundDetailView extends Component {
     render() {
-        const {recordSound} = this.props;
-	const itemData = [
+	const {recordSound} = this.props;
+        const itemData = [
             {id: 1, img: recordSound.imgUrl1},
             {id: 2, img: recordSound.imgUrl2},
             {id: 3, img: recordSound.imgUrl3}
-        ]    
+        ]
         return (
             <Card>
                 <CardContent>
@@ -27,7 +27,7 @@ class RecordSoundDetailView extends Component {
                         src={recordSound.soundUrl}
                         autoPlay = {false}
                         controls />
-		    <ImageList sx={{ width: 300, height: 130 }} cols={3} rowHeight={164}>
+                    <ImageList sx={{ width: 300, height: 130 }} cols={3} rowHeight={164}>
                         {itemData.map((item) => (
                             <ImageListItem key={item.id}>
                             <img
