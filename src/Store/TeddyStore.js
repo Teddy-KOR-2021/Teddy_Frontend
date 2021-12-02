@@ -12,10 +12,24 @@ class TeddyStore {
         imgUrl3: "",
     }
 
+    talktoChild = {
+        id:"",
+        topic:"iot",
+        text: ""
+    }
+
+    init = () => {
+        this.talktoChild = {id:"", topic:"iot", text:""}
+    }
+
     recordSoundList = [];
 
     constructor(){
         makeAutoObservable(this, {}, {autoBind:true})
+    }
+
+    TextSetProps = (name, value) => {
+        this.talktoChild = {...this.talktoChild, [name]:value}
     }
 
     goHome(e) {
@@ -26,8 +40,8 @@ class TeddyStore {
         window.location.href = '/record/';
     }
 
-    goWatchandTalk(e) {
-        window.location.href = '/watchandtalk/';
+    goTalktoChild(e) {
+        window.location.href = '/talktochild/';
     }
 
     goGraph(e) {
@@ -55,6 +69,28 @@ class TeddyStore {
             this.message = error.message;
         }
     }
+
+    async selectText(){
+        try{
+            console.log(this.talktoChild)
+            await TeddyApi.talktoChildText(this.talktoChild);
+            // this.publishText()
+        }catch(error){
+            this.message = error.message;
+        }
+        this.init()
+    }
+
+    // async publishText(){
+    //     try{
+    //         await TeddyApi.publish();
+    //     }catch(error){
+    //         this.message = error.message;
+    //     }
+    // }
+
+
+
 
 }
 

@@ -11,7 +11,7 @@ import TeddyStore from '../Store/TeddyStore';
 export default function FadeMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const {goHome, goWatchandTalk, goRecordSound, goGraph} = TeddyStore;
+    const {goHome, goTalktoChild, goRecordSound, goGraph} = TeddyStore;
     const menuClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
@@ -47,7 +47,7 @@ export default function FadeMenu() {
             TransitionComponent={Fade}
             >
             <MenuItem onClick={goHome}>홈으로</MenuItem>
-            <MenuItem onClick={goWatchandTalk}>아이 보며 말하기</MenuItem>
+            <MenuItem onClick={goTalktoChild}>아이에게 말하기</MenuItem>
             <MenuItem onClick={goRecordSound}>아이 말 확인하기</MenuItem>
             <MenuItem onClick={goGraph}>그래프 보기</MenuItem>
             </Menu>
