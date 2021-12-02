@@ -13,7 +13,15 @@ class TeddyApi{
                     .then((response)=>response.data);
     }
 
-    record
+    talktoChildText(talktoChild){
+        return axios.post(this.URL+'publish/create/', talktoChild)
+                    .then((response)=>response.data)
+    }
+
+    // publish(){
+    //     return axios.post(this.URL+'publish/')
+    //                 .then((response)=>response.data)
+    // }
 
     
 }
