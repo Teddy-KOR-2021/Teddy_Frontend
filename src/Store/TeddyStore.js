@@ -7,9 +7,7 @@ class TeddyStore {
         title : "", //HH:MM:SS초 아이의 대답이 녹음되었습니다.
         recordDate: "",
         soundUrl: "", //녹음본 
-        imgUrl1: "",
-        imgUrl2: "",
-        imgUrl3: "",
+        imgUrl: "",
     }
 
     talktoChild = {
@@ -44,8 +42,8 @@ class TeddyStore {
     }
 
     goGraph(e) {
-        // window.location.href = 'http://18.133.133.235:8000/analysis/testdg4/';
-        window.location.href = 'http://localhost:8000/analysis/testdg4/';
+        window.location.href = 'http://18.169.185.73:8000/analysis/testdg4/';
+        // window.location.href = 'http://localhost:8000/analysis/testdg4/';
     }
 
     async selectAll(){
