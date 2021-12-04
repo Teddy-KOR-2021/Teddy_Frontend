@@ -19,7 +19,7 @@ class RecordSoundDetailView extends Component {
                     {recordSound.title}
                     </Typography>
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    {recordSound.recordDate}
+                    {recordSound.date}
                     </Typography>
                     <ReactAudioPlayer
                         src={recordSound.soundUrl}
