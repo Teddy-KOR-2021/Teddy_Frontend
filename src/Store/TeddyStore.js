@@ -12,10 +12,23 @@ class TeddyStore {
         imgUrl3: "",
     }
 
+    talktoChild = {
+        id:"",
+        text: ""
+    }
+
+    init = () => {
+        this.talktoChild = {id:"", text:""}
+    }
+
     recordSoundList = [];
 
     constructor(){
         makeAutoObservable(this, {}, {autoBind:true})
+    }
+
+    TextSetProps = (name, value) => {
+        this.talktoChild = {...this.talktoChild, [name]:value}
     }
 
     goHome(e) {
@@ -26,12 +39,13 @@ class TeddyStore {
         window.location.href = '/record/';
     }
 
-    goWatchandTalk(e) {
-        window.location.href = '/watchandtalk/';
+    goTalktoChild(e) {
+        window.location.href = '/talktochild/';
     }
 
     goGraph(e) {
-        window.location.href = 'http://18.133.133.235:8000/testdg4/';
+        // window.location.href = 'http://18.133.133.235:8000/analysis/testdg4/';
+        window.location.href = 'http://localhost:8000/analysis/testdg4/';
     }
 
     async selectAll(){
@@ -55,6 +69,30 @@ class TeddyStore {
             this.message = error.message;
         }
     }
+
+    async selectText(){
+        try{
+            console.log(this.talktoChild)
+            await TeddyApi.talktoChildText(this.talktoChild);
+            alert('아이에게 하고 싶은 말이 전송되었습니다!')
+            // this.publishText()
+        }catch(error){
+            alert('전송 실패!')
+            this.message = error.message;
+        }
+        this.init()
+    }
+
+    // async publishText(){
+    //     try{
+    //         await TeddyApi.publish();
+    //     }catch(error){
+    //         this.message = error.message;
+    //     }
+    // }
+
+
+
 
 }
 
