@@ -23,32 +23,23 @@ class TalktoChild extends Component {
                 <Stack
                 direction="row"
                 justifyContent="center"
-                alignItems="center"
+                alignItems="flex-end"
                 spacing={2}
                 >
                 <TextField
-                  style ={{width: '50%'}}
-                  id="outlined-uncontrolled"
-                  name="text"
-                  value={talktoChild.text}  
-                  onChange={(e)=>TextSetProps(e.target.name, e.target.value)}
-                  label="아이에게 하고 싶은 말을 입력하세요."/> 
-                    {/* <TextareaAutosize
-                        name="text"
-                        value={talktoChild.text} 
-                        onChange={(e)=>TextSetProps(e.target.name, e.target.value)}
-                        aria-label="minimum height"
-                        minRows={10}
-                        placeholder="아이에게 하고 싶은 말을 입력하세요."
-                        style={{ width: 300 }}
-                    /> */}
-                </Stack>
-                <p/>
+                    style ={{width: '50%'}}
+                    id="outlined-multiline-static"
+                    label="아이에게 하고 싶은 말을 입력하세요."
+                    multiline
+                    rows={5}
+                    name="text"
+                    value={talktoChild.text}  
+                    onChange={(e)=>TextSetProps(e.target.name, e.target.value)}
+                />
+                
                 <Stack
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                spacing={2}
+                direction="column"
+                spacing={1}
                 >
                     <Button variant="contained" endIcon={<SendIcon />} onClick={()=>selectText()}>
                         전송 
@@ -57,6 +48,7 @@ class TalktoChild extends Component {
                     <Button onClick={()=>goHome()} variant="outlined" endIcon={<DeleteIcon />}>
                         취소
                     </Button>
+                </Stack>
 
                 </Stack>
                 
