@@ -10,9 +10,7 @@ class RecordSoundDetailView extends Component {
     render() {
 	const {recordSound} = this.props;
         const itemData = [
-            {id: 1, img: recordSound.imgUrl1},
-            {id: 2, img: recordSound.imgUrl2},
-            {id: 3, img: recordSound.imgUrl3}
+            {id: 1, img: recordSound.imgUrl},
         ]
         return (
             <Card>
@@ -21,13 +19,13 @@ class RecordSoundDetailView extends Component {
                     {recordSound.title}
                     </Typography>
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    {recordSound.recordDate}
+                    {recordSound.date}
                     </Typography>
                     <ReactAudioPlayer
                         src={recordSound.soundUrl}
                         autoPlay = {false}
                         controls />
-                    <ImageList sx={{ width: 300, height: 130 }} cols={3} rowHeight={164}>
+                    <ImageList sx={{ width: 300, height: 180 }} cols={1} rowHeight={164}>
                         {itemData.map((item) => (
                             <ImageListItem key={item.id}>
                             <img
