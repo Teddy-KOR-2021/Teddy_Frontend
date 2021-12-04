@@ -5,7 +5,7 @@ class TeddyStore {
     recordSound = {
         id : "",
         title : "", //HH:MM:SS초 아이의 대답이 녹음되었습니다.
-        recordDate: "",
+        date: "",
         soundUrl: "", //녹음본 
         imgUrl: "",
     }
