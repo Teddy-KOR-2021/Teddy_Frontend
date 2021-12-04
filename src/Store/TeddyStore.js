@@ -42,8 +42,8 @@ class TeddyStore {
     }
 
     goGraph(e) {
-        // window.location.href = 'http://18.169.185.73:8000/analysis/testdg4/';
-        window.location.href = 'http://localhost:8000/analysis/testdg4/';
+        window.location.href = 'http://18.169.185.73:8000/analysis/testdg4/';
+        // window.location.href = 'http://localhost:8000/analysis/testdg4/';
     }
 
     async selectAll(){
