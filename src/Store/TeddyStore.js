@@ -14,12 +14,11 @@ class TeddyStore {
 
     talktoChild = {
         id:"",
-        topic:"iot",
         text: ""
     }
 
     init = () => {
-        this.talktoChild = {id:"", topic:"iot", text:""}
+        this.talktoChild = {id:"", text:""}
     }
 
     recordSoundList = [];
@@ -45,7 +44,8 @@ class TeddyStore {
     }
 
     goGraph(e) {
-        window.location.href = 'http://18.133.133.235:8000/testdg4/';
+        // window.location.href = 'http://18.133.133.235:8000/analysis/testdg4/';
+        window.location.href = 'http://localhost:8000/analysis/testdg4/';
     }
 
     async selectAll(){
@@ -74,8 +74,10 @@ class TeddyStore {
         try{
             console.log(this.talktoChild)
             await TeddyApi.talktoChildText(this.talktoChild);
+            alert('아이에게 하고 싶은 말이 전송되었습니다!')
             // this.publishText()
         }catch(error){
+            alert('전송 실패!')
             this.message = error.message;
         }
         this.init()
