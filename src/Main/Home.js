@@ -24,7 +24,7 @@ class Home extends Component {
                         아이 말 확인하기
                     </Button>
                     <Button onClick={()=>goGraph()} endIcon={<InsertChartIcon />}>
-                        아이 그래프 보기
+                        아이 감정 보기
                     </Button>
                 </Stack>
             </div>

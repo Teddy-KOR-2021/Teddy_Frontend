@@ -49,7 +49,7 @@ export default function FadeMenu() {
             <MenuItem onClick={goHome}>홈으로</MenuItem>
             <MenuItem onClick={goTalktoChild}>아이에게 말하기</MenuItem>
             <MenuItem onClick={goRecordSound}>아이 말 확인하기</MenuItem>
-            <MenuItem onClick={goGraph}>그래프 보기</MenuItem>
+            <MenuItem onClick={goGraph}>아이 감정 보기</MenuItem>
             </Menu>
         </Stack>
       </div>
