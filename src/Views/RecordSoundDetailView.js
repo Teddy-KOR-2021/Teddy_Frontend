@@ -18,7 +18,7 @@ class RecordSoundDetailView extends Component {
             <Card>
                 <CardContent>
                     <Typography variant="h5" component="div">
-                    {recordSound.title}
+                    &nbsp; {recordSound.title}
                     </Typography>
                     <ReactAudioPlayer
                         src={recordSound.soundUrl}
