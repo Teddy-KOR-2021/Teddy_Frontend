@@ -4,6 +4,7 @@ import RecordSoundView from '../Views/RecordSoundView';
 import RecordSoundDetailView from '../Views/RecordSoundDetailView';
 import TeddyStore from '../Store/TeddyStore';
 
+
 class RecordSound extends Component {
     teddyStore = TeddyStore;
     componentDidMount(){
@@ -21,7 +22,7 @@ class RecordSound extends Component {
                 <RecordSoundDetailView 
                 recordSound={recordSound}
                 recordSoundRemove={recordSoundRemove} />
-                <h2>아이 말  목록</h2>
+                <h3>아이 말  목록</h3>
                 {temp}
             </div>
         );
