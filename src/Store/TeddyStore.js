@@ -68,6 +68,17 @@ class TeddyStore {
         }
     }
 
+    async recordSoundRemove() {
+        try{
+            await TeddyApi.boardDelete(this.recordSound.id);
+            alert('녹음이 성공적으로 삭제되었습니다!')
+            this.selectAll();
+        }catch(error){
+            this.message = error.message;
+        }
+
+      }
+
     async selectText(){
         try{
             console.log(this.talktoChild)

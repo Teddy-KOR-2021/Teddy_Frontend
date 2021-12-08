@@ -13,6 +13,11 @@ class TeddyApi{
                     .then((response)=>response.data);
     }
 
+    recordSoundDelete(id){
+        return axios.delete(this.URL+`delete/${id}`)
+                    .then((response)=>response.data);
+    }
+
     talktoChildText(talktoChild){
         return axios.post(this.URL+'publish/create/', talktoChild)
                     .then((response)=>response.data)
