@@ -5,10 +5,12 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 class RecordSoundDetailView extends Component {
     render() {
-        const {recordSound} = this.props;
+        const {recordSound, recordSoundRemove} = this.props;
         const itemData = [
             {id: 1, img: recordSound.imgUrl},
         ]
@@ -37,8 +39,13 @@ class RecordSoundDetailView extends Component {
                             </ImageListItem>
                         ))}
                     </ImageList>
+                    <Button onClick={()=>recordSoundRemove()} variant="outlined" endIcon={<DeleteIcon />}>
+                    삭제
+                    </Button>
                 </CardContent>
             </Card>
+
+
         );
     }
 }
