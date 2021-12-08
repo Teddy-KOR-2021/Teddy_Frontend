@@ -36,6 +36,7 @@ class TalktoChild extends Component {
                     value={talktoChild.text}  
                     onChange={(e)=>TextSetProps(e.target.name, e.target.value)}
                 />
+                </Stack>
                 
                 <Stack
                 direction="row"
@@ -50,8 +51,6 @@ class TalktoChild extends Component {
                     <Button onClick={()=>goHome()} variant="outlined" endIcon={<DeleteIcon />}>
                         취소
                     </Button>
-                </Stack>
-
                 </Stack>
                 
             </div>
