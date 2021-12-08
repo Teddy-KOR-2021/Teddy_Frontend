@@ -22,7 +22,7 @@ class RecordSound extends Component {
                 <RecordSoundDetailView 
                 recordSound={recordSound}
                 recordSoundRemove={recordSoundRemove} />
-                <h3>아이 말  목록</h3>
+                <h2>&nbsp; 아이 말  목록</h2>
                 {temp}
             </div>
         );
