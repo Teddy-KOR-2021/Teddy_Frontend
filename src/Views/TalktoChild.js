@@ -38,8 +38,10 @@ class TalktoChild extends Component {
                 />
                 
                 <Stack
-                direction="column"
-                spacing={1}
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
                 >
                     <Button variant="contained" endIcon={<SendIcon />} onClick={()=>selectText()}>
                         전송 
