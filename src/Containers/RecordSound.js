@@ -10,7 +10,7 @@ class RecordSound extends Component {
         this.teddyStore.selectAll();
     }
     render() {
-        const {recordSound, recordSoundList, selectRecordSound} = this.teddyStore;
+        const {recordSound, recordSoundList, selectRecordSound, recordSoundRemove} = this.teddyStore;
         const temp = recordSoundList.map(recordSound =>{
             return(
                 <RecordSoundView key={recordSound.id} recordSound={recordSound} onSelect={selectRecordSound} />
@@ -18,7 +18,9 @@ class RecordSound extends Component {
         })
         return (
             <div>
-                <RecordSoundDetailView recordSound={recordSound} />
+                <RecordSoundDetailView 
+                recordSound={recordSound}
+                recordSoundRemove={recordSoundRemove} />
                 <h2>아이 말  목록</h2>
                 {temp}
             </div>
