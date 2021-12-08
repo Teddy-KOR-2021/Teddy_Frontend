@@ -37,7 +37,7 @@ class TalktoChild extends Component {
                     onChange={(e)=>TextSetProps(e.target.name, e.target.value)}
                 />
                 </Stack>
-                
+                <br/> <br/>
                 <Stack
                 direction="row"
                 justifyContent="center"
