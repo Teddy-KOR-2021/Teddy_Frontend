@@ -7,6 +7,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Stack from '@mui/material/Stack';
 
 class RecordSoundDetailView extends Component {
     render() {
@@ -39,11 +40,16 @@ class RecordSoundDetailView extends Component {
                             </ImageListItem>
                         ))}
                     </ImageList>
-		            </CardContent>
-                    <Button onClick={()=>recordSoundRemove()} variant="outlined" endIcon={<DeleteIcon />}>
-                    삭제
-                    </Button>
-		                <br/><br/>
+                </CardContent>
+                <Stack
+                direction="row"
+                alignItems="flex-start"
+                spacing={2}
+                >
+                <Button onClick={()=>recordSoundRemove()} variant="outlined" endIcon={<DeleteIcon />}>
+                            삭제
+                </Button>
+                </Stack>
             </Card>
 
 
