@@ -5,7 +5,7 @@ class RecordSoundView extends Component {
         const {recordSound, onSelect} = this.props;
         return (
             <div onClick={()=>onSelect(recordSound.id)}>
-                <h2>{recordSound.title}</h2>
+                <h2>{recordSound.title}</h2> <hr/>
             </div>
         );
     }
