@@ -41,7 +41,7 @@ class TalktoChild extends Component {
                 <Stack
                 direction="row"
                 justifyContent="center"
-                alignItems="center"
+                alignItems="flex-end"
                 spacing={2}
                 >
                     <Button variant="contained" endIcon={<SendIcon />} onClick={()=>selectText()}>
