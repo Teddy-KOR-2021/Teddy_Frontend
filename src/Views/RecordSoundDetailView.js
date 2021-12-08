@@ -39,11 +39,12 @@ class RecordSoundDetailView extends Component {
                             </ImageListItem>
                         ))}
                     </ImageList>
-                    <Button onClick={()=>recordSoundRemove()} variant="outlined" endIcon={<DeleteIcon />}>
-                    삭제
-                    </Button>
                 </CardContent>
+                <Button onClick={()=>recordSoundRemove()} variant="outlined" endIcon={<DeleteIcon />}>
+                            삭제
+                </Button>
             </Card>
+
 
 
         );

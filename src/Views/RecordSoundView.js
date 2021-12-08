@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Typography from '@mui/material/Typography';
 
 class RecordSoundView extends Component {
     render() {
         const {recordSound, onSelect} = this.props;
         return (
             <div onClick={()=>onSelect(recordSound.id)}>
-                <h2>{recordSound.title}</h2>
+                <Typography variant="h5" component="div">{recordSound.title}</Typography>
             </div>
         );
     }
